@@ -38,6 +38,8 @@ body {
     color: var(--text-primary);
     line-height: 1.6;
     overflow-x: hidden;
+    word-break: keep-all;
+    /* Natural Korean line breaks */
 }
 
 a {
@@ -176,10 +178,16 @@ nav {
 .hero p {
     font-size: 1.25rem;
     color: var(--text-secondary);
-    margin-bottom: 2.5rem;
+    margin-bottom: 1.5rem;
     max-width: 600px;
     margin-left: auto;
     margin-right: auto;
+}
+
+.hero-description-en {
+    font-size: 1rem !important;
+    margin-bottom: 2.5rem !important;
+    opacity: 0.8;
 }
 
 .hero-buttons {
@@ -609,5 +617,36 @@ footer {
 
     .nav-links {
         display: none;
+    }
+
+    .desktop-break {
+        display: none;
+    }
+}
+
+/* ===================================
+   영웅 이름 그라디언트 애니메이션
+   =================================== */
+.highlight-name {
+    background: linear-gradient(45deg, #667eea, #764ba2, #f093fb, #4facfe);
+    background-size: 300% 300%;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    font-weight: 700;
+    animation: gradient-shift 3s ease infinite;
+}
+
+@keyframes gradient-shift {
+    0% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0% 50%;
     }
 }
